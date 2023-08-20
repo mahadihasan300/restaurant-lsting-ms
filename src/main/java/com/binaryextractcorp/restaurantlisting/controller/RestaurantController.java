@@ -28,4 +28,9 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantDTOAdded,HttpStatus.CREATED);
     }
 
+    @GetMapping("/fetchRestaurantById/{id}")
+    public ResponseEntity<RestaurantDTO> fetchRestaurantById(@PathVariable Integer id){
+        return restaurantService.fetchRestaurantById(id);
+    }
+
 }
